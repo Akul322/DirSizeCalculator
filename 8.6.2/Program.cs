@@ -8,15 +8,19 @@ namespace _8._6._2
         {
             Console.WriteLine("Write path to directory:");
             string Path = Console.ReadLine();
+
+            DirectoryInfo di = new DirectoryInfo(Path);
+
             try
             {
                 if (Directory.Exists(Path))
                 {
-                    Console.WriteLine("Directory size:" + DirectoryExtension.DirSize(Path));
+                    Console.WriteLine();
+                    Console.WriteLine( "Directory size: " + DirectoryExtension.DirSize(di) + " byte ");
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect path ro directory!");
+                    Console.WriteLine("Incorrect path to directory!");
                 }
             }
             catch (Exception e)
